@@ -3,4 +3,4 @@ objectData = matfile(testObject);
 
 plotObjectData(objectData)
 
-aggregateObjectData("black_foam_110")
+findOptimalTimeStep()
