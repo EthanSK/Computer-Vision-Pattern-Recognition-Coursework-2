@@ -21,7 +21,7 @@ plot(objectData.F0tdc, 'Color', '#42f569');
 title('Temperature');
 
 subplot(numRows, numCols, 4);
-plot(objectData.F0Electrodes);
+plot(objectData.F0Electrodes');
 title('Electrodes');
 
 subplot(numRows, numCols, 5);
@@ -35,7 +35,7 @@ subplot(numRows, numCols, 7);
 plot(objectData.F1tdc, 'Color', '#42f569')
 
 subplot(numRows, numCols, 8);
-plot(objectData.F1Electrodes);
+plot(objectData.F1Electrodes');
 
 
 end

@@ -32,7 +32,7 @@ for i = 1:1000
     varOfMeansCombined = mean([varOfMeansF1pac varOfMeansF1tdc varOfMeansF1pdc varOfMeansF1Electrodes]); %TODO - normalize?
     meanOfTrialVarsCombined = mean([meanOfTrialVarsF1pac meanOfTrialVarsF1tdc meanOfTrialVarsF1pdc meanOfTrialVarsF1Electrodes]);
 
-    score = varOfMeansCombined / meanOfTrialVarsCombined;
+    score = varOfMeansCombined / meanOfTrialVarsCombined; %or maybe we should do varOfMeansCombined - meanOfTrialVarsCombined ? check when we have clustering
     % score = varOfMeansCombined;
     if score > maxScore
         maxScore = score;

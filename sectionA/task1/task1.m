@@ -1,4 +1,4 @@
-testObject = "../../data/black_foam_110_07_HOLD"
+testObject = "../../data/car_sponge_101_04_HOLD"
 objectData = matfile(testObject);
 
 plotObjectData(objectData)
