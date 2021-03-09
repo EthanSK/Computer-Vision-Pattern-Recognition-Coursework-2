@@ -1,3 +1,6 @@
-matObj = matfile("data/black_foam_110_07_HOLD");
+testObject = "../../data/black_foam_110_07_HOLD"
+objectData = matfile(testObject);
 
-plotVariables(matObj)
+plotObjectData(objectData)
+
+aggregateObjectData("black_foam_110")
