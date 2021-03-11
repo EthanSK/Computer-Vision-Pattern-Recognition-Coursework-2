@@ -15,7 +15,7 @@ figure;
 for i = 1:6
     startIdx = (i - 1) * 10 + 1;
     endIdx = startIdx + 9;
-    scatter3(PVTStandardized(startIdx:endIdx, 1), PVTStandardized(startIdx:endIdx, 2),  PVTStandardized(startIdx:endIdx, 3), 'MarkerFaceColor', colors(i));
+    scatter3(PVTStandardized(startIdx:endIdx, 1), PVTStandardized(startIdx:endIdx, 2),  PVTStandardized(startIdx:endIdx, 3), 'MarkerFaceColor', colors(i, :));
 
     if i == 1
         hold on;
@@ -25,5 +25,5 @@ end
 origin = zeros(1, 3);
 quiver3(origin, origin, origin, eigVecs(1,:), eigVecs(2,:), eigVecs(3,:));
 
-featureVec2d = eigVecs(:2); 
-projected2d = PVTStandardized * featureVec2d;
+% featureVec2d = eigVecs(:2); 
+% projected2d = PVTStandardized * featureVec2d;

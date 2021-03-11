@@ -10,17 +10,15 @@ load('../matfiles/colors.mat');
 load('../matfiles/F1_PVT_data.mat');
 
 figure;
-% for i = 1:6
-%     startIdx = (i - 1) * 10 + 1;
-%     endIdx = startIdx + 9;
-%     scatter3(PVT(startIdx:endIdx, 1), PVT(startIdx:endIdx, 2),  PVT(startIdx:endIdx, 3), 'MarkerFaceColor', colors(i));
+for i = 1:6
+    startIdx = (i - 1) * 10 + 1;
+    endIdx = startIdx + 9;
+    scatter3(PVT(startIdx:endIdx, 1), PVT(startIdx:endIdx, 2),  PVT(startIdx:endIdx, 3), 'MarkerFaceColor', colors(i, :));
 
-%     if i == 1
-%         hold on;
-%     end
-% end
-
-scatter3(PVT(:, 1), PVT(:, 2),  PVT(:, 3), 60, colors);
+    if i == 1
+        hold on;
+    end
+end
 
 legend('Acrylic', 'Black Foam', 'Car Sponge', 'Flour Sack', 'Kitchen Sponge', 'Steel Vase');
 xlabel('Pressure');
