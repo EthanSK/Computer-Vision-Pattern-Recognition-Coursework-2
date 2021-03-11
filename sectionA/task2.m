@@ -1,21 +1,12 @@
-
-
 timeStep = 869; %38 otherwise
 
-acrylicData = getObjectDataForTimeStep('acrylic_211', timeStep);
-blackFoamData = getObjectDataForTimeStep('black_foam_110', timeStep);
-carSpongeData = getObjectDataForTimeStep('car_sponge_101', timeStep);
-flourSackData = getObjectDataForTimeStep('flour_sack_410', timeStep);
-kitchenSpongeData = getObjectDataForTimeStep('kitchen_sponge_114', timeStep);
-steelVaseData = getObjectDataForTimeStep('steel_vase_702', timeStep);
-
 data = [
-    acrylicData;
-    blackFoamData;
-    carSpongeData;
-    flourSackData;
-    kitchenSpongeData;
-    steelVaseData;
+    getObjectDataForTimeStep('acrylic_211', timeStep);
+    getObjectDataForTimeStep('black_foam_110', timeStep);
+    getObjectDataForTimeStep('car_sponge_101', timeStep);
+    getObjectDataForTimeStep('flour_sack_410', timeStep);
+    getObjectDataForTimeStep('kitchen_sponge_114', timeStep);
+    getObjectDataForTimeStep('steel_vase_702', timeStep);
 ];
 
 PVT = data(:, 1:3);
