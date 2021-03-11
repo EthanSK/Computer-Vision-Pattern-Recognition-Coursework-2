@@ -21,5 +21,5 @@ data = [
 PVT = data(:, 1:3);
 E = data(:, 4:22);
 
-save("F1_PVT_data.mat", 'PVT');
-save("F1_electrode_data.mat", 'E');
+save("../matfiles/F1_PVT_data.mat", 'PVT');
+save("../matfiles/F1_electrode_data.mat", 'E');

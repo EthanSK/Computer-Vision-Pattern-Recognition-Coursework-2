@@ -6,16 +6,8 @@
 % kitchenSpongeData;
 % steelVaseData;
 
-colors = [
-    "#03fcfc"
-    "#292929"
-    "#c2a800"
-    "#ff00f2"
-    "#006e02"
-    "#999999"
-];
-
-PVT = matfile('F1_PVT_data.mat').PVT;
+colors = matfile('../matfiles/colors.mat').colors;
+PVT = matfile('../matfiles/F1_PVT_data.mat').PVT;
 
 figure;
 for i = 1:6
