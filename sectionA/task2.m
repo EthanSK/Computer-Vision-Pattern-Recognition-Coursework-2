@@ -1,4 +1,4 @@
-timeStep = 869; %38 otherwise
+timeStep = 869; %TODO:- change this
 
 data = [
     getObjectDataForTimeStep('acrylic_211', timeStep);
