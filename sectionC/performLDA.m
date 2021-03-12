@@ -39,5 +39,4 @@ SbPT = (objectAMeans(metricIdxs) - objectBMeans(metricIdxs)) * (objectAMeans(met
 
 [eigVecs, eigVals] = eigOrdered(SwPT \ SbPT);
 
-
 end

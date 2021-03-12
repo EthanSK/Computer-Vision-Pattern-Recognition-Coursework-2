@@ -1,8 +1,4 @@
-plotLDA([2 3], [1 2]); % PV
-plotLDA([2 3], [1 3]); % PT
-plotLDA([2 3], [2 3]); % TV
-
-function [] = plotLDA(objectIdxs, metricIdxs)
+function [] = plotLDA2d(objectIdxs, metricIdxs)
     load('../matfiles/colors.mat');
     load('../matfiles/names.mat');
     load('../matfiles/F1_PVT_data.mat');
