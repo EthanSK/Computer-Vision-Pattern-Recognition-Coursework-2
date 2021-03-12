@@ -7,7 +7,7 @@ PVTStandardized = [
 
 PVTCovariance = cov(PVTStandardized);
 
-[eigVecs, eigVals] = eigOrdered(PVTCovariance);
+[eigVecs, ~] = eigOrdered(PVTCovariance);
 
 %plot PVT standardized with principal component vectors
 plotData(@(i, startIdx, endIdx) scatter3(PVTStandardized(startIdx:endIdx, 1), PVTStandardized(startIdx:endIdx, 2),  PVTStandardized(startIdx:endIdx, 3), 'MarkerFaceColor', colors(i, :)))
