@@ -10,4 +10,5 @@ xlabel('Pressure');
 ylabel('Vibration');
 zlabel('Temperature');
 
-performClustering(PVTStandardized, 'euclidean', 'ward');
+performClustering(PVTStandardized, 'euclidean', 'average');
+performClustering(PVTStandardized, 'cityblock', 'average');
