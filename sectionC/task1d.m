@@ -1,4 +1,4 @@
-objectIdxs = [1 6]; %TODO: - 4 and 6 give complex eigVecs
+objectIdxs = [4 6]; %TODO: - 4 and 6 give complex eigVecs
 
 plotLDA2d(objectIdxs, [1 2]); % PV
 plotLDA2d(objectIdxs, [1 3]); % PT
