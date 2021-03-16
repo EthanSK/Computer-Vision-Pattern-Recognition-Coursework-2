@@ -1,12 +1,6 @@
 load('../matfiles/colors.mat');
 load('../matfiles/F1_electrode_data.mat');
 
-EStandardized = zeros(60, 19);
-for i = 1:19
-    EStandardized(:, i) = normalize(E(:, i));
-end
-
-
 ECovariance = cov(EStandardized);
 
 [eigVecs, eigVals] = eigOrdered(ECovariance);

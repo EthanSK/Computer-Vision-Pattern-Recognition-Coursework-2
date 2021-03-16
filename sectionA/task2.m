@@ -12,5 +12,14 @@ data = [
 PVT = data(:, 1:3);
 E = data(:, 4:22);
 
-save("../matfiles/F1_PVT_data.mat", 'PVT');
-save("../matfiles/F1_electrode_data.mat", 'E');
+PVTStandardized = [
+    normalize(PVT(:, 1)) normalize(PVT(:, 2)) normalize(PVT(:, 3))
+];
+
+EStandardized = zeros(60, 19);
+for i = 1:19
+    EStandardized(:, i) = normalize(E(:, i));
+end
+
+save("../matfiles/F1_PVT_data.mat", 'PVT', 'PVTStandardized');
+save("../matfiles/F1_electrode_data.mat", 'E', 'EStandardized');

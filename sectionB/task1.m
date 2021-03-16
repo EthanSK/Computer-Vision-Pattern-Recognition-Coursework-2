@@ -1,10 +1,6 @@
 load('../matfiles/colors.mat');
 load('../matfiles/F1_PVT_data.mat');
 
-PVTStandardized = [
-    normalize(PVT(:, 1)) normalize(PVT(:, 2)) normalize(PVT(:, 3))
-];
-
 PVTCovariance = cov(PVTStandardized);
 
 [eigVecs, ~] = eigOrdered(PVTCovariance);
