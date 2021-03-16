@@ -1,4 +1,5 @@
 function [eigVecs, eigVals, PVTStandardized, means] = performLDA(objectIdxs, metricIdxs)
+%performLDA - performs LDA analysis for given object indexes and metric indexes
 
 load('../matfiles/colors.mat');
 load('../matfiles/names.mat');

@@ -6,7 +6,6 @@ numCols = 4;
 
 figure;
 
-
 subplot(numRows, numCols, 1);
 plot(objectData.F0pdc, 'Color', '#4287f5');
 title('Pressure');
@@ -36,6 +35,5 @@ plot(objectData.F1tdc, 'Color', '#42f569')
 
 subplot(numRows, numCols, 8);
 plot(objectData.F1Electrodes');
-
 
 end

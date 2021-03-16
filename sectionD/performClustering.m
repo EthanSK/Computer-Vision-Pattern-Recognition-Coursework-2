@@ -1,4 +1,5 @@
 function [] = performClustering(data, distMethod, linkageMethod)
+%performClustering - performs and visualises clustering in 3d, and shows dendogram
 
 pdistance = pdist(data, distMethod);
 tree = linkage(pdistance, linkageMethod);

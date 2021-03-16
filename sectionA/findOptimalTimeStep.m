@@ -1,21 +1,20 @@
-function [optimalTimeStep] = findOptimalTimeStep()
+function [optimalTimeStep, scores] = findOptimalTimeStep()
 %findOptimalTimeStep - Calculates the best time step to use
 
-
-[carSpongeMean, carSpongeVar] = aggregateObjectData("car_sponge_101");
-[blackFoamMean, blackFoamVar] = aggregateObjectData("black_foam_110");
-[kitchenSpongeMean, kitchenSpongeVar] = aggregateObjectData("kitchen_sponge_114");
-[acrylicMean, acrylicVar] = aggregateObjectData("acrylic_211");
-[steelVaseMean, steelVaseVar] = aggregateObjectData("steel_vase_702");
-[flourSackMean, flourSackVar] = aggregateObjectData("flour_sack_410");
+[carSpongeMean, carSpongeVar, carSpongeVarNorm] = aggregateObjectData("car_sponge_101");
+[blackFoamMean, blackFoamVar, blackFoamVarNorm] = aggregateObjectData("black_foam_110");
+[kitchenSpongeMean, kitchenSpongeVar, kitchenSpongeVarNorm] = aggregateObjectData("kitchen_sponge_114");
+[acrylicMean, acrylicVar, acrylicVarNorm] = aggregateObjectData("acrylic_211");
+[steelVaseMean, steelVaseVar, steelVaseVarNorm] = aggregateObjectData("steel_vase_702");
+[flourSackMean, flourSackVar, flourSackVarNorm] = aggregateObjectData("flour_sack_410");
 
 means = [carSpongeMean blackFoamMean kitchenSpongeMean acrylicMean steelVaseMean flourSackMean];
 vars = [carSpongeVar blackFoamVar kitchenSpongeVar acrylicVar steelVaseVar flourSackVar];
+varNorms = [carSpongeVarNorm blackFoamVarNorm kitchenSpongeVarNorm acrylicVarNorm steelVaseVarNorm flourSackVarNorm];
 
-% varOfMeansF1pac = var(carSpongeMean.F1pac, blackFoamMean.F1pac, kitchenSpongeMean.F1pac, acrylicMean.F1pac, steelVaseMean.F1pac, flourSackMean.F1pac)
-
+scores = zeros(1000, 1);
 maxScore = 0;
-maxTimeStep = 0;
+optimalTimeStep = 0;
 
 for i = 1:1000
 
@@ -29,47 +28,14 @@ for i = 1:1000
     meanOfTrialVarsF1pdc = mean(arrayfun(@(objectVar) objectVar.F1pdc(i), vars));
     meanOfTrialVarsF1Electrodes = mean(arrayfun(@(objectVar) objectVar.F1Electrodes(i), vars));
 
-    varOfMeansCombined = mean([varOfMeansF1pac varOfMeansF1tdc varOfMeansF1pdc varOfMeansF1Electrodes]); %TODO - normalize?
+    varOfMeansCombined = mean([varOfMeansF1pac varOfMeansF1tdc varOfMeansF1pdc varOfMeansF1Electrodes]);
     meanOfTrialVarsCombined = mean([meanOfTrialVarsF1pac meanOfTrialVarsF1tdc meanOfTrialVarsF1pdc meanOfTrialVarsF1Electrodes]);
 
-    score = varOfMeansCombined / meanOfTrialVarsCombined; %or maybe we should do varOfMeansCombined - meanOfTrialVarsCombined ? check when we have clustering
-    % score = varOfMeansCombined;
+    score = varOfMeansCombined / meanOfTrialVarsCombined;
+    scores(i) = score;
     if score > maxScore
         maxScore = score;
-        maxTimeStep = i;
+        optimalTimeStep = i;
     end
 end
-
-disp(["The max score was ", maxScore, "for time step ", maxTimeStep])
-optimalTimeStep = maxTimeStep;
-
-
-% %%pseudocode (v1)%%%%%%%%%%%%%%%%
-
-% for i in range (1, 1000):
-%     varOfMeansF1pac = var([carSpongeMean.F1pac[1][i], blackFoamMean.F1pac[1][i], kitchenSpongeMean.F1pac[1][i], etc...])
-%     varOfMeansF1tdc = var([carSpongeMean.F1tdc[1][i], blackFoamMean.F1tdc[1][i], kitchenSpongeMean.F1tdc[1][i], etc...])
-%     ...etc...
-
-
-% then normalize each of these varOfMeansX and average them togothere
-% %%%%%%%%%%%%%%%%
-
-
-% %%%pseudocode v2%%%%%%%%%%%%%
-% for i in range (1, 1000):
-
-%     meanOfTrialVarsF1pac = mean([carSpongeVar.F1pac[1][i], blackFoamVar.F1pac[1][i], kitchenSpongeVar.F1pac[1][i], etc...])
-%     meanOfTrialVarsF1tdc = mean([carSpongeVar.F1tdc[1][i], blackFoamVar.F1tdc[1][i], kitchenSpongeVar.F1tdc[1][i], etc...])
-%     ...etc...
-
-% then somehow combine each mean, normalizing it? or just normalize it first
-% %%%%%%%%%%%%%%%%%
-
-% the find the time step with the highest v1/v2
-
-
-
-% meanOfVars = mean(carSpongeVar, blackFoamVar, kitchenSpongeVar, acrylicVar, steelVaseVar, flourSackVar)
-
 end

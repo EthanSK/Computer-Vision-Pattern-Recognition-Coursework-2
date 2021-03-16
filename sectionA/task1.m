@@ -1,6 +1,9 @@
-testObject = "../../data/car_sponge_101_04_HOLD"
+testObject = "../data/car_sponge_101_04_HOLD";
 objectData = matfile(testObject);
 
-plotObjectData(objectData)
+plotObjectData(objectData);
 
-findOptimalTimeStep()
+[optimalTimeStep, scores] = findOptimalTimeStep();
+
+figure;
+plot(scores);

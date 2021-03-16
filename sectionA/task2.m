@@ -1,4 +1,4 @@
-timeStep = 869; %TODO:- change this
+[timeStep] = findOptimalTimeStep();
 
 data = [
     getObjectDataForTimeStep('acrylic_211', timeStep);
