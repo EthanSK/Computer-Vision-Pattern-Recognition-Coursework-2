@@ -1,4 +1,4 @@
-function [] = plotLDA2d(objectIdxs, metricIdxs)
+function [] = plotLDA2d(objectIdxs, metricIdxs, task, name)
 %plotLDA2d - LDA projected and plotted to 2d
 
 load('../matfiles/colors.mat');
@@ -24,5 +24,6 @@ line([eigVecs(2, 1) -eigVecs(2, 1)] * lineLength, [-eigVecs(1, 1) eigVecs(1, 1)]
 axis square;
 xlim([-3, 3]);
 ylim([-3, 3]);
+saveas(gcf, sprintf('../report/sectionC/%s/LDA_2D_%s.png', task, name));
 
 end

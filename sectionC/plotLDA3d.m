@@ -1,4 +1,4 @@
-function [] = plotLDA3d(objectIdxs, metricIdxs)
+function [] = plotLDA3d(objectIdxs, metricIdxs, task, name)
 %plotLDA3d - LDA projected and plotted to 3d
 
 load('../matfiles/colors.mat');
@@ -34,6 +34,7 @@ axis square;
 xlim([-3, 3]);
 ylim([-3, 3]);
 zlim([-3, 3]);
+saveas(gcf, sprintf('../report/sectionC/%s/LDA_hyperplane_%s.png', task, name));
 
 patch('Faces', [1 3 2 4], 'Vertices', [verts(:, 1)'; -verts(:, 1)'; verts(:, 2)'; -verts(:, 2)'], 'FaceAlpha', 0.5, 'FaceColor', 'red');
 
@@ -58,6 +59,7 @@ grid on;
 
 xlabel('LD1');
 ylabel('LD2');
+saveas(gcf, sprintf('../report/sectionC/%s/LDA_2D_%s.png', task, name));
 
 
 %plot 1d representation
@@ -80,6 +82,7 @@ plot(projectedMeans1dB(1), 1, 'o', 'MarkerEdgeColor', colors(2, :), 'MarkerSize'
 grid on;
 
 xlabel('LD1');
+saveas(gcf, sprintf('../report/sectionC/%s/LDA_1D_%s.png', task, name));
 
     
 end

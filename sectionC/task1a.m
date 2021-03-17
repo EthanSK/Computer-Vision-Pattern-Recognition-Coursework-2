@@ -1,8 +1,4 @@
-plotLDA2d([2 3], [1 2]); % Black Foam & Car Sponge, PV
-saveas(gcf, sprintf('../report/sectionC/task1a/PV.png'));
-
-plotLDA2d([2 3], [1 3]); % Black Foam & Car Sponge, PT
-saveas(gcf, sprintf('../report/sectionC/task1a/PT.png'));
-
-plotLDA2d([2 3], [2 3]); % Black Foam & Car Sponge, TV
-saveas(gcf, sprintf('../report/sectionC/task1a/TV.png'));
+plotLDA2d([2 3], [1 2], 'task1a', 'PV'); % Black Foam & Car Sponge, PV
+plotLDA2d([2 3], [1 3], 'task1a', 'PT'); % Black Foam & Car Sponge, PT
+plotLDA2d([2 3], [2 3], 'task1a', 'TV'); % Black Foam & Car Sponge, TV
+ 
