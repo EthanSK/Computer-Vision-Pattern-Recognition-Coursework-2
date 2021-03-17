@@ -1,6 +1,12 @@
+
+#this won't work!
+
 # report/**/*.png
 # !./report/**/.gitignore
 
 
-report
-!.gitkeep
+report/**/*.png
+report/**/*.jpg
+report/**/*.fig
+
+
