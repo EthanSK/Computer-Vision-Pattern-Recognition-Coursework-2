@@ -23,3 +23,5 @@ plotData(@(i, startIdx, endIdx) scatter3(projected3d(startIdx:endIdx, 1), projec
 xlabel('PC1');
 ylabel('PC2');
 zlabel('PC3');
+
+saveas(gcf, sprintf('../report/sectionB/task2/PCA_3D.png'));

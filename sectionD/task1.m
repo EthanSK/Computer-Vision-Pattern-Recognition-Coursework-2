@@ -6,6 +6,8 @@ plotData(@(i, startIdx, endIdx) scatter3(PVTStandardized(startIdx:endIdx, 1), PV
 xlabel('Pressure');
 ylabel('Vibration');
 zlabel('Temperature');
+saveas(gcf, sprintf('../report/sectionD/task1/PVTStandardized.png'));
 
-performClustering(PVTStandardized, 'euclidean', 'average');
-performClustering(PVTStandardized, 'cityblock', 'average');
+
+performClustering(PVTStandardized, 'euclidean', 'average', 'task1');
+performClustering(PVTStandardized, 'cityblock', 'average', 'task1');
