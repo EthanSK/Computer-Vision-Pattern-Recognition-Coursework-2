@@ -34,9 +34,10 @@ axis square;
 xlim([-3, 3]);
 ylim([-3, 3]);
 zlim([-3, 3]);
-saveas(gcf, sprintf('../report/sectionC/%s/LDA_hyperplane_%s.png', task, name));
 
 patch('Faces', [1 3 2 4], 'Vertices', [verts(:, 1)'; -verts(:, 1)'; verts(:, 2)'; -verts(:, 2)'], 'FaceAlpha', 0.5, 'FaceColor', 'red');
+
+saveas(gcf, sprintf('../report/sectionC/%s/LDA_hyperplane_%s.png', task, name));
 
 %plot 2d representation
 

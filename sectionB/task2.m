@@ -9,6 +9,8 @@ ECovariance = cov(EStandardized);
 %scree plot
 figure;
 plot(eigVals, 'o-');
+xlabel('Principal Component');
+ylabel('Variance');
 grid on;
 saveas(gcf, sprintf('../report/sectionB/task2/scree_plot.png'));
 

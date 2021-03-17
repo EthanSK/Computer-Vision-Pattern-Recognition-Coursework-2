@@ -18,4 +18,6 @@ end
 
 figure;
 plot(scores);
+xlabel('Time Step');
+ylabel('Fitness');
 saveas(gcf, sprintf('../report/sectionA/task1/timeStepScores.png'));
