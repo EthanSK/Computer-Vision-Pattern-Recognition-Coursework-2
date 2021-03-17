@@ -15,3 +15,5 @@ xlabel('Pressure');
 ylabel('Vibration');
 zlabel('Temperature');
 axis square;
+
+saveas(gcf, sprintf('../report/sectionA/task3/PVT_3D_scatter.png'));

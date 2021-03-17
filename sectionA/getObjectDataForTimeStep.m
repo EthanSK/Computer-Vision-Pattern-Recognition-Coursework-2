@@ -16,5 +16,10 @@ function [res] = getObjectDataForTimeStep(object, timeStep)
         E(:, i) = matObj.F1Electrodes(:, timeStep);
     end
 
-    res = [P V T E];
+    res = [
+        P
+        V
+        T
+        E
+    ]';
 end

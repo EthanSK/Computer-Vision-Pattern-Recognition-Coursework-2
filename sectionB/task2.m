@@ -10,6 +10,7 @@ ECovariance = cov(EStandardized);
 figure;
 plot(eigVals, 'o-');
 grid on;
+saveas(gcf, sprintf('../report/sectionB/task2/scree_plot.png'));
 
 %plot 3d representation
 featureVec3d = eigVecs(:, 1:3); 
