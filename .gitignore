@@ -1,0 +1,6 @@
+# report/**/*.png
+# !./report/**/.gitignore
+
+
+report
+!.gitkeep
