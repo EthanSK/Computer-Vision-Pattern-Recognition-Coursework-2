@@ -35,7 +35,7 @@ xlim([-3, 3]);
 ylim([-3, 3]);
 zlim([-3, 3]);
 
-patch('Faces', [1 3 2 4], 'Vertices', [verts(:, 1)'; -verts(:, 1)'; verts(:, 2)'; -verts(:, 2)'], 'FaceAlpha', 0.5, 'FaceColor', 'red');
+patch('Faces', [1 3 2 4], 'Vertices', [verts(:, 1)'; -verts(:, 1)'; verts(:, 2)'; -verts(:, 2)'], 'FaceAlpha', 0.1, 'FaceColor', 'red');
 
 saveas(gcf, sprintf('../report/sectionC/%s/LDA_hyperplane_%s.png', task, name));
 
