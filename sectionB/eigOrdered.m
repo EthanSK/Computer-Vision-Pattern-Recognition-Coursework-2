@@ -1,10 +1,9 @@
-function [eigVecs, eigVals] = eigOrdered(A)
+function [eigVecs, eigVals, eigVecsRaw, eigValsRaw] = eigOrdered(A)
 %eigOrdered - Calculates eigenvectors and eigenvalues sorted from largest to smallest
 
-[eigVecs, D] = eig((A + A') / 2);
-eigVals = diag(D);
-[~, sortedIdxs] = sort(eigVals, 'descend');
-eigVals = eigVals(sortedIdxs);
-eigVecs = eigVecs(:, sortedIdxs);
+[eigVecsRaw, eigValsRaw] = eig((A + A') / 2);
+eigVals = diag(eigValsRaw);
+[eigVals, sortedIdxs] = sort(eigVals, 'descend');
+eigVecs = eigVecsRaw(:, sortedIdxs);
 
 end
