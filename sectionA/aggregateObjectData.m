@@ -1,4 +1,4 @@
-function [objectDataMean, objectDataVar, objectDataVarNorm] = aggregateObjectData(objectName)
+function [objectDataMean, objectDataVar] = aggregateObjectData(objectName)
 %aggregateObjectVariables - Calculates the mean of the variables across all 10 trials for an object
 
 numTimeSteps = 1000;
@@ -31,9 +31,4 @@ objectDataVar.F1pdc = var(F1pdc);
 objectDataVar.F1tdc = var(F1tdc);
 objectDataVar.F1Electrodes = var(F1Electrodes);
 
-objectDataVarNorm = struct;
-objectDataVarNorm.F1pac = objectDataVar.F1pac ./ mean(F1pac .^ 2);
-objectDataVarNorm.F1pdc = objectDataVar.F1pdc ./ mean(F1pdc .^ 2);
-objectDataVarNorm.F1tdc = objectDataVar.F1tdc ./ mean(F1tdc .^ 2);
-objectDataVarNorm.F1Electrodes = objectDataVar.F1Electrodes ./ mean(F1Electrodes .^ 2);
 end

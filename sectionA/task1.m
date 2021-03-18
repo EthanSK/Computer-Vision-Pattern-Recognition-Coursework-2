@@ -5,13 +5,7 @@ objects = [
     "kitchen_sponge_114_04_HOLD";
     "car_sponge_101_05_HOLD";
     "car_sponge_101_03_HOLD";
-]
-
-for i = 1:length(objects)
-    objectData = matfile("../data/" + objects(i));
-    plotObjectData(objectData);
-    saveas(gcf, sprintf('../report/sectionA/task1/%s.png', objects(i)));
-end
+];
 
 
 [optimalTimeStep, scores] = findOptimalTimeStep();
@@ -21,3 +15,9 @@ plot(scores);
 xlabel('Time Step');
 ylabel('Fitness');
 saveas(gcf, sprintf('../report/sectionA/task1/timeStepScores.png'));
+
+for i = 1:length(objects)
+    objectData = matfile("../data/" + objects(i));
+    plotObjectData(objectData);
+    saveas(gcf, sprintf('../report/sectionA/task1/%s.png', objects(i)));
+end

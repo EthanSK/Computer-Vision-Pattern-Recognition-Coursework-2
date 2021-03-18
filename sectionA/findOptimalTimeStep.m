@@ -1,16 +1,15 @@
 function [optimalTimeStep, scores] = findOptimalTimeStep()
 %findOptimalTimeStep - Calculates the best time step to use
 
-[carSpongeMean, carSpongeVar, carSpongeVarNorm] = aggregateObjectData("car_sponge_101");
-[blackFoamMean, blackFoamVar, blackFoamVarNorm] = aggregateObjectData("black_foam_110");
-[kitchenSpongeMean, kitchenSpongeVar, kitchenSpongeVarNorm] = aggregateObjectData("kitchen_sponge_114");
-[acrylicMean, acrylicVar, acrylicVarNorm] = aggregateObjectData("acrylic_211");
-[steelVaseMean, steelVaseVar, steelVaseVarNorm] = aggregateObjectData("steel_vase_702");
-[flourSackMean, flourSackVar, flourSackVarNorm] = aggregateObjectData("flour_sack_410");
+[carSpongeMean, carSpongeVar] = aggregateObjectData("car_sponge_101");
+[blackFoamMean, blackFoamVar] = aggregateObjectData("black_foam_110");
+[kitchenSpongeMean, kitchenSpongeVar] = aggregateObjectData("kitchen_sponge_114");
+[acrylicMean, acrylicVar] = aggregateObjectData("acrylic_211");
+[steelVaseMean, steelVaseVar] = aggregateObjectData("steel_vase_702");
+[flourSackMean, flourSackVar] = aggregateObjectData("flour_sack_410");
 
 means = [carSpongeMean blackFoamMean kitchenSpongeMean acrylicMean steelVaseMean flourSackMean];
 vars = [carSpongeVar blackFoamVar kitchenSpongeVar acrylicVar steelVaseVar flourSackVar];
-varNorms = [carSpongeVarNorm blackFoamVarNorm kitchenSpongeVarNorm acrylicVarNorm steelVaseVarNorm flourSackVarNorm];
 
 scores = zeros(1000, 1);
 maxScore = 0;
