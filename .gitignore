@@ -8,6 +8,7 @@
 report/**/*.png
 report/**/*.jpg
 report/**/*.fig
+report/**/*.txt
 
 
 confusion.txt

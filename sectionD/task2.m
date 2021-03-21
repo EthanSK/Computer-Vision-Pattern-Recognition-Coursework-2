@@ -1,5 +1,9 @@
 load('../matfiles/F1_electrode_pca.mat');
 load('../matfiles/F1_electrode_data.mat');
+load('../matfiles/F1_PVT_data.mat');
+
+
+performBagging(200, PVTStandardized, 'pvt');
 
 performBagging(169, EStandardized, 'raw');
 performBagging(30, EStandardized, 'raw');
